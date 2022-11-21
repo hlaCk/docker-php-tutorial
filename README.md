@@ -65,7 +65,11 @@ available containing all videos of the tutorial series.
 - [Use git-secret to encrypt secrets in the repository](#use-git-secret-to-encrypt-secrets-in-the-repository)
 - [Create a CI pipeline for dockerized PHP Apps](#create-a-ci-pipeline-for-dockerized-php-apps)
 - [A primer on GCP Compute Instance VMs for dockerized Apps](#a-primer-on-gcp-compute-instance-vms-for-dockerized-apps)
-- [Deploy dockerized PHP Apps to production on GCP via docker compose](#deploy-dockerized-php-apps-to-production-on-gcp-via-docker-compose)
+- [Deploy dockerized PHP Apps to production on GCP via `docker compose`](#deploy-dockerized-php-apps-to-production-on-gcp-via-docker-compose)
+- [Create a production infrastructure for dockerized PHP Apps on GCP](#create-a-production-infrastructure-for-dockerized-php-apps-on-gcp)
+- [Deploy dockerized PHP Apps to production](#deploy-dockerized-php-apps-to-production)
+- [Use the `gcloud` cli docker image instead of installing it locally](#use-the-gcloud-cli-docker-image-instead-of-installing-it-locally)
+- [Manage Logfiles in Docker via Volumes and Sidecar containers](#manage-logfiles-in-docker-via-volumes-and-sidecar-containers)
 
 ### Planned (already used by us but not put into writing):
 
@@ -190,14 +194,42 @@ applications.
 Introduce a `prod` environment to build docker images that are then deployed "to production" on a
 GCP VM to be executed via `docker compose` as a proof-of-concept.
 
-### Run dockerized PHP Apps on multiple GCP VMs in production
+### Create a production infrastructure for dockerized PHP Apps on GCP
 
-- Status: draft
-- Link:
-- Branch: 
+- Status: published ✓
+- Link: https://www.pascallandau.com/blog/create-production-infrastructure-php-app-gcp/
+- Branch:
+  [Part 10](https://github.com/paslandau/docker-php-tutorial/tree/part-10-create-production-infrastructure-php-app-gcp)
 
-### Scaling Dockerized PHP Applications with Terraform and Kubernetes on GCP/AWS
+Create a production infrastructure for a dockerized PHP application on GCP using multiple VMs 
+and managed services for `redis` and `mysql`.
 
-- Status: Dream Caused by the Flight of a Bee Around a Pomegranate a Second Before Awakening
-- Link:
-- Branch: 
+### Deploy dockerized PHP Apps to production
+
+- Status: published ✓
+- Link: https://www.pascallandau.com/blog/deploy-dockerized-php-app-production/
+- Branch:
+  [Part 11](https://github.com/paslandau/docker-php-tutorial/tree/part-11-deploy-dockerized-php-app-production)
+
+Deploy a dockerized PHP application to a production environment on GCP using multiple VMs and 
+run it via "plain" `docker` (without `compose`).
+
+### Use the `gcloud` cli docker image instead of installing it locally
+
+- Status: published ✓
+- Link: https://www.pascallandau.com/blog/use-gcloud-cli-docker-image/
+- Branch:
+  [Part 12](https://github.com/paslandau/docker-php-tutorial/tree/part-12-use-gcloud-cli-docker-image)
+
+Replace the locally installed `gcloud` cli tool with the official `gcloud` cli docker image and 
+integrate it in the setup and deployment process.
+
+### Manage Logfiles in Docker via Volumes and Sidecar containers
+
+- Status: published ✓
+- Link: https://www.pascallandau.com/blog/manage-log-files-in-docker-via-volumes-and-sidecar-containers-with-cron-jobs-and-logrotate/
+- Branch:
+  [Part 13](https://github.com/paslandau/docker-php-tutorial/tree/part-13-manage-log-files-in-docker-via-volumes-and-sidecar-containers-with-cron-jobs-and-logrotate)
+
+Implement the sidecar pattern to manage the  various log files of our dockerized application via 
+`logrotate` and `cron`.

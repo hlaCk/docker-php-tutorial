@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  application:
+    image: ${DOCKER_REGISTRY?}/${DOCKER_NAMESPACE?}/application-${ENV?}:${TAG?}
+    build:
+      context: ../
+      dockerfile: ./images/php/application/Dockerfile
+      target: ${ENV?}
+      args:
+        - BASE_IMAGE=${DOCKER_REGISTRY?}/${DOCKER_NAMESPACE?}/php-base-${ENV?}:${TAG?}
+        - ENV=${ENV?}

@@ -233,4 +233,3 @@ integrate it in the setup and deployment process.
 
 Implement the sidecar pattern to manage the  various log files of our dockerized application via 
 `logrotate` and `cron`.
-
